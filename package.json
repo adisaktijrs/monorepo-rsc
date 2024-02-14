@@ -6,5 +6,10 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "server": "yarn workspace server start",
+    "next-rsc": "yarn workspace next-rsc run dev",
+    "next": "yarn workspace next run dev"
+  }
 }

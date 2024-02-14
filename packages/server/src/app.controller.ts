@@ -9,4 +9,14 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/slow')
+  getSlow() {
+    return this.appService.getSlowData();
+  }
+
+  @Get('/slowest')
+  getSuperSlow() {
+    return this.appService.getSuperSlowData();
+  }
 }
