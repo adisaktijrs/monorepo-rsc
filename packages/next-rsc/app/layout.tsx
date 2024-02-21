@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 import Sidebar from "./components/Sidebar";
+import { Layout } from "antd";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex gap-2">
-        <Sidebar />
-        {children}
+      <body className="flex">
+        <AntdRegistry>
+          <Sidebar />
+          <Layout>{children}</Layout>
+        </AntdRegistry>
       </body>
     </html>
   );

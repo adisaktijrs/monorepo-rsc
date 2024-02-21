@@ -1,9 +1,20 @@
-export default async function Home() {
-  await new Promise((r) => setTimeout(r, 3000));
+import { Content } from "antd/es/layout/layout";
+import Title from "antd/es/typography/Title";
 
+export default async function Home() {
   return (
-    <main className="border m-6 p-6">
-      <p>lol</p>
-    </main>
+    <Content
+      style={{
+        padding: 24,
+        margin: 16,
+        background: "white",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Title level={2}>ANTD + Next App Router (RSC + Suspense)</Title>
+    </Content>
   );
 }
