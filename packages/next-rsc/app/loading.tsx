@@ -1,5 +1,11 @@
+import { Spin } from "antd";
+
 const loading = () => {
-  return <p className="m-6">loading...</p>;
+  return (
+    <div className="m-6 mt-10 flex justify-center">
+      <Spin size="large" />
+    </div>
+  );
 };
 
 export default loading;

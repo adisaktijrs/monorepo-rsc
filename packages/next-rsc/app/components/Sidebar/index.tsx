@@ -7,7 +7,7 @@ import {
 } from "@ant-design/icons";
 import { Menu } from "antd";
 import type { MenuProps } from "antd";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -31,7 +31,7 @@ const items: MenuItem[] = [
   getItem("Navigation One", "sub1", <MailOutlined />, [
     getItem("Home", "/"),
     getItem("Suspense", "/suspense"),
-    getItem("Option 3", "3"),
+    getItem("Option 3", "/3"),
     getItem("Option 4", "4"),
   ]),
   getItem("Navigation Two", "sub2", <AppstoreOutlined />, [
@@ -59,8 +59,8 @@ const items: MenuItem[] = [
 
 const Sidebar = () => {
   const router = useRouter();
+  const pathname = usePathname();
   const onClick: MenuProps["onClick"] = (e) => {
-    console.log("click ", e.key);
     router.push(e.key);
   };
 
@@ -73,6 +73,7 @@ const Sidebar = () => {
       mode="inline"
       onClick={onClick}
       items={items}
+      selectedKeys={[pathname]}
     />
   );
 };

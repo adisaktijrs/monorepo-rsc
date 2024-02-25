@@ -1,6 +1,12 @@
+import { Suspense } from "react";
 import { Content } from "antd/es/layout/layout";
+import { Divider, Skeleton } from "antd";
 
-const Suspense = () => {
+import Chart from "../components/Chart/Chart";
+import Slow from "../components/Slow";
+import SuperSlow from "../components/SuperSlow";
+
+const SuspensePage = () => {
   return (
     <Content
       style={{
@@ -9,11 +15,22 @@ const Suspense = () => {
         background: "white",
       }}
     >
-      <p>add charts</p>
-      <p>add counter</p>
-      <p>add counter</p>
+      <p>Client Component</p>
+      <Chart />
+      <Divider />
+
+      <p>Server Component: Slow component</p>
+      <Suspense fallback={<Skeleton active paragraph={false} />}>
+        <Slow />
+      </Suspense>
+      <Divider />
+
+      <p>Server Component: Super slow component</p>
+      <Suspense fallback={<Skeleton active paragraph={false} />}>
+        <SuperSlow />
+      </Suspense>
     </Content>
   );
 };
 
-export default Suspense;
+export default SuspensePage;

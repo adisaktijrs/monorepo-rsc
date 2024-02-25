@@ -14,7 +14,7 @@ export default async function Home() {
         alignItems: "center",
       }}
     >
-      <Title level={2}>ANTD + Next App Router (RSC + Suspense)</Title>
+      <Title level={4}>ANTD + Next App Router (RSC + Suspense)</Title>
     </Content>
   );
 }

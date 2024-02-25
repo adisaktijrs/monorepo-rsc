@@ -19,4 +19,9 @@ export class AppController {
   getSuperSlow() {
     return this.appService.getSuperSlowData();
   }
+
+  @Get('/charts')
+  getCharts() {
+    return this.appService.getChartData();
+  }
 }
