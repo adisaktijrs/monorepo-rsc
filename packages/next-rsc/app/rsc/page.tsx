@@ -1,6 +1,8 @@
 import { Content } from "antd/es/layout/layout";
+import ImageEffect from "../components/ImageEffect";
 
-const RSC = () => {
+const RSC = ({ searchParams }: { searchParams: { [key: string]: string } }) => {
+  const param = searchParams.s;
   return (
     <Content
       style={{
@@ -9,7 +11,8 @@ const RSC = () => {
         background: "white",
       }}
     >
-      <p>lol</p>
+      <p>Image generator</p>
+      <ImageEffect title={param} />
     </Content>
   );
 };
