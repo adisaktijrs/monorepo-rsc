@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Content } from "antd/es/layout/layout";
-import { Divider, Skeleton } from "antd";
+import { Alert, Divider, Skeleton } from "antd";
 
 import Chart from "../components/Chart/Chart";
 import Slow from "../components/Slow";
@@ -15,6 +15,14 @@ const SuspensePage = () => {
         background: "white",
       }}
     >
+      <Alert
+        message="I'm clickable even when the other sections are still streaming/hydrating."
+        type="info"
+        showIcon
+        closable
+      />
+      <Divider />
+
       <p>Client Component</p>
       <Chart />
       <Divider />

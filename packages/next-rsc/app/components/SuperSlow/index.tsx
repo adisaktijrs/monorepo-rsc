@@ -7,6 +7,9 @@ async function getData() {
     throw new Error("Failed to fetch data");
   }
 
+  console.info(
+    `Finished fetch: SuperSlow component: ${new Date().toLocaleTimeString()}`
+  );
   return res.json();
 }
 

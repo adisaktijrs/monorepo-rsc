@@ -38,6 +38,10 @@ export const options = {
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 const Chart = () => {
+  console.info(
+    `Finished render: Chart component: ${new Date().toLocaleTimeString()}`
+  );
+
   const { data: res, isLoading } = useSWR(
     "http://localhost:5000/charts",
     fetcher,

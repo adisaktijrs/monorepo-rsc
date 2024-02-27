@@ -16,7 +16,7 @@ export class AppService {
   }
 
   async getSuperSlowData() {
-    await new Promise((r) => setTimeout(r, 6000));
+    await new Promise((r) => setTimeout(r, 5000));
     return {
       msg: 'better use an interceptor but nvm, who cares lol',
       data: 'Send a super slow data',
