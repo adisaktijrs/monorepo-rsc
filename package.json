@@ -10,6 +10,10 @@
   "scripts": {
     "server": "yarn workspace server start",
     "next-rsc": "yarn workspace next-rsc run dev",
-    "next": "yarn workspace next run dev"
+    "next-rsc:build": "yarn workspace next-rsc run build",
+    "next-rsc:start": "yarn workspace next-rsc run start",
+    "next-old": "yarn workspace next-old run dev",
+    "next-old:build": "yarn workspace next-old run build",
+    "next-old:start": "yarn workspace next-old run start"
   }
 }

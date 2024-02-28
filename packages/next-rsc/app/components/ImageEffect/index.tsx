@@ -13,12 +13,12 @@ async function ImageEffect({ title = "Calvary" }: { title?: string }) {
   jimpImage.brightness(-0.3);
 
   jimpImage.print(jimpFont, 270, 300, title);
-  const image = await jimpImage.getBase64Async(Jimp.MIME_JPEG);
+  await jimpImage.quality(50).writeAsync("public/img1.jpg");
 
   return (
     <img
       className="transformedImage"
-      src={image}
+      src="/img1.jpg"
       alt="Transformed"
       width={500}
     />
